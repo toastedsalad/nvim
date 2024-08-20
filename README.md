@@ -26,12 +26,22 @@ Another cool plugin is the undo tree. It presents a history for undoing things.
 
 ## LSP
 LSP requres multiple steps.
-1. Install the language server itself:
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#csharp_ls
+1. Install the language server itself. In our case this is going to be Omnisharp.
 
-2. Install and configure the LSP for Vim:
+https://github.com/OmniSharp/omnisharp-roslyn/releases
+
+Just untar it near neovim.
+
+2. Install and configure the LSP for Vim. The getting started guide is pretty good and will get you going.
 https://github.com/VonHeikemen/lsp-zero.nvim?tab=readme-ov-file
 
+When the time comes to configure the Lsp, you will need to provide the following as the server:
+
+```
+require('lspconfig').omnisharp.setup{
+cmd = { "dotnet", "/home/mellow/.config/nvim/omnisharp/OmniSharp.dll" },
+}
+```
 
 ## Split Screen
 Split screen is supported by default with :vsplit.

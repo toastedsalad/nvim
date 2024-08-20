@@ -24,6 +24,14 @@ https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
 Another cool plugin is the undo tree. It presents a history for undoing things.
 
+## LSP
+LSP requres multiple steps.
+1. Install the language server itself:
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#csharp_ls
+
+2. Install and configure the LSP for Vim:
+https://github.com/VonHeikemen/lsp-zero.nvim?tab=readme-ov-file
+
 
 ## Split Screen
 Split screen is supported by default with :vsplit.

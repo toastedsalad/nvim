@@ -32,7 +32,8 @@ https://github.com/OmniSharp/omnisharp-roslyn/releases
 
 Just untar it near neovim.
 
-2. Install and configure the LSP for Vim. The getting started guide is pretty good and will get you going.
+### Install your choice of LSP. This is omnisharp.
+Install and configure the LSP for Vim. The getting started guide is pretty good and will get you going.
 https://github.com/VonHeikemen/lsp-zero.nvim?tab=readme-ov-file
 
 When the time comes to configure the Lsp, you will need to provide the following as the server:
@@ -42,11 +43,13 @@ require('lspconfig').omnisharp.setup{
 cmd = { "dotnet", "/home/mellow/.config/nvim/omnisharp/OmniSharp.dll" },
 }
 ```
+### Or csharp-ls
+https://github.com/razzmatazz/csharp-language-server
+This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it out now.
 
 3. Additional extensions for the omnisharp functionality are here. I've noticed that I couldn't check all references. Maybe this fixes it somehow.
 
 https://github.com/Hoffs/omnisharp-extended-lsp.nvim
-This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it out now.
 
 
 ## Split Screen

@@ -46,6 +46,8 @@ cmd = { "dotnet", "/home/mellow/.config/nvim/omnisharp/OmniSharp.dll" },
 3. Additional extensions for the omnisharp functionality are here. I've noticed that I couldn't check all references. Maybe this fixes it somehow.
 
 https://github.com/Hoffs/omnisharp-extended-lsp.nvim
+This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it out now.
+
 
 ## Split Screen
 Split screen is supported by default with :vsplit.

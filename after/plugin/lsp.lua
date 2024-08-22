@@ -19,9 +19,18 @@ lsp_zero.extend_lspconfig({
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
-require('lspconfig').omnisharp.setup{
-cmd = { "dotnet", "/home/mellow/.config/nvim/omnisharp/OmniSharp.dll" },
-}
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  -- Replace the language servers listed here 
+  -- with the ones you want to install
+  ensure_installed = {'csharp_ls'},
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  },
+})
 
 ---
 -- Autocompletion setup

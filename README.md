@@ -51,10 +51,18 @@ This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it ou
 
 https://github.com/Hoffs/omnisharp-extended-lsp.nvim
 
-
 ## Split Screen
 Split screen is supported by default with :vsplit.
 But the inactive screen looses transparency...
+
+## Using tmux
+tmux allows running multiple apps in the same terminal.
+It provides multiplexing. Default installation is fine just make sure to add these to fix the colors:
+```
+~$ cat .tmux.conf 
+set -ga terminal-overrides ",*256col*:Tc"
+set -g default-terminal "screen-256color"
+```
 
 ## List of Custom Keybindings
 

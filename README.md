@@ -51,6 +51,13 @@ This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it ou
 
 https://github.com/Hoffs/omnisharp-extended-lsp.nvim
 
+## Debugging
+There is some debugging support for .net as well but how does it all pipe together is to be tested.
+Here are the resources.
+https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap
+https://github.com/Samsung/netcoredbg you heard it right the debug adapter for csharp is written by Samsung.
+https://www.youtube.com/watch?v=lyNfnI-B640
+
 ## Split Screen
 Split screen is supported by default with :vsplit.
 But the inactive screen looses transparency...

@@ -23,7 +23,6 @@ We will also install harpoon to quickly jumpt between different open files.
 https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
 Another cool plugin is the undo tree. It presents a history for undoing things.
-#
 ## LSP
 LSP requres multiple steps.
 1. Install the language server itself. In our case this is going to be Omnisharp.

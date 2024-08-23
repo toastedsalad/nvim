@@ -23,7 +23,7 @@ We will also install harpoon to quickly jumpt between different open files.
 https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
 Another cool plugin is the undo tree. It presents a history for undoing things.
-
+#
 ## LSP
 LSP requres multiple steps.
 1. Install the language server itself. In our case this is going to be Omnisharp.
@@ -74,5 +74,5 @@ set -g default-terminal "screen-256color"
 
 F10 button doesn't work. Or it does something that is not F10. Feels like an escape char.
 What's the diff between /after and /lua directories.
-Somehow I can't do completion properly.
+Somehow I can't do completion properly. - Solved with some remaps.
 

@@ -70,17 +70,9 @@ It provides multiplexing. Default installation is fine just make sure to add the
 set -ga terminal-overrides ",*256col*:Tc"
 set -g default-terminal "screen-256color"
 ```
+## Some outstanding quetions
 
-## List of Custom Keybindings
+F10 button doesn't work. Or it does something that is not F10. Feels like an escape char.
+What's the diff between /after and /lua directories.
+Somehow I can't do completion properly.
 
-```
-:!grep keymap -R ~/.config/nvim/                                                                                      
-/home/mellow/.config/nvim/lua/mellow/remap.lua:vim.keymap.set("n", "<leader>ui", vim.cmd.Ex)                                  
-/home/mellow/.config/nvim/after/plugin/telescope.lua:vim.keymap.set('n', '<leader>ff', builtin.find_files, {})                
-/home/mellow/.config/nvim/after/plugin/telescope.lua:vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-
-```
-## Color Scheme
-
-We're going for the rose pine.
-https://github.com/rose-pine/neovim

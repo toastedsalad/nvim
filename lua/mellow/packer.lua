@@ -4,40 +4,45 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+    
+    -- Cosmetics
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end
+    })
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    -- General nvim plugins for navigation and editting
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/playground')
+    use("nvim-lua/plenary.nvim")
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    } 
+    use("mbbill/undotree")
+    use("tpope/vim-fugitive")
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+    -- Lsp related plugins
+    use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
+    use({'neovim/nvim-lspconfig'})
+    use({'hrsh7th/nvim-cmp'})
+    use({'hrsh7th/cmp-nvim-lsp'})
+    use({'williamboman/mason-lspconfig.nvim'})
+    use({'williamboman/mason.nvim'})
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/playground')
-  use("nvim-lua/plenary.nvim")
-  use {
-	  "ThePrimeagen/harpoon",
-	  branch = "harpoon2",
-	  requires = { {"nvim-lua/plenary.nvim"} }
-  } 
-  use("mbbill/undotree")
-  use("tpope/vim-fugitive")
-
-  use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
-  use({'neovim/nvim-lspconfig'})
-  use({'hrsh7th/nvim-cmp'})
-  use({'hrsh7th/cmp-nvim-lsp'})
-  
-  use({'williamboman/mason-lspconfig.nvim'})
-  use({'williamboman/mason.nvim'})
-
+    -- Debugging
+    use({'mfussenegger/nvim-dap'})
+    use({'rcarriga/nvim-dap-ui'})
+    use({'nvim-neotest/nvim-nio'})
 end)

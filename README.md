@@ -57,6 +57,14 @@ https://aaronbos.dev/posts/debugging-csharp-neovim-nvim-dap
 https://github.com/Samsung/netcoredbg you heard it right the debug adapter for csharp is written by Samsung.
 https://www.youtube.com/watch?v=lyNfnI-B640
 
+This setup generally, works out pretty fine. It almost feels like it's all coming together. Except for one thing. Testing...
+
+## Testing
+Running and debugging tests in VS is very smooth.
+If there's a way to resemble some of that experience it would be super nice.
+Here's someone who tried solving this:
+https://github.com/GustavEikaas/easy-dotnet.nvim
+
 ## Split Screen
 Split screen is supported by default with :vsplit.
 But the inactive screen looses transparency...

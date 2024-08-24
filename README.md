@@ -77,9 +77,18 @@ It provides multiplexing. Default installation is fine just make sure to add the
 set -ga terminal-overrides ",*256col*:Tc"
 set -g default-terminal "screen-256color"
 ```
-## Some outstanding quetions
+## Outstanding issues and tickets
 
-F10 button doesn't work. Or it does something that is not F10. Feels like an escape char.
-What's the diff between /after and /lua directories.
-Somehow I can't do completion properly. - Solved with some remaps.
+* F10 button doesn't work. Or it does something that is not F10. Feels like an escape char.
+** Solved gnome terminal was interceptint this button. Solved by disabling mnemonics in the terminal preferences. 
+* Somehow I can't do completion properly.
+** Solved with some remaps.
+* Install lua lsp to help with configuration of neovim.
+** Solved
+* What's the diff between /after and /lua directories.
+
+
+
+
+
 

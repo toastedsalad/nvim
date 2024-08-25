@@ -104,6 +104,8 @@ set -g default-terminal "screen-256color"
 * Install lua lsp to help with configuration of neovim.
     * Solved
 * What's the diff between /after and /lua directories.
+    * Semi-solved: In very broad terms /after configs will be applied later.
+* Solve path resolution for the debugger.
 
 
 

@@ -6,7 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    
+
     -- Cosmetics
     use({
         'rose-pine/neovim',
@@ -38,13 +38,26 @@ return require('packer').startup(function(use)
     use({'neovim/nvim-lspconfig'})
     use({'hrsh7th/nvim-cmp'})
     use({'hrsh7th/cmp-nvim-lsp'})
+
+    -- Mason, yet another package manager
     use({'williamboman/mason-lspconfig.nvim'})
     use({'williamboman/mason.nvim'})
+    use({'WhoIsSethDaniel/mason-tool-installer.nvim'})
 
     -- Debugging
     use({'mfussenegger/nvim-dap'})
     use({'rcarriga/nvim-dap-ui'})
     use({'nvim-neotest/nvim-nio'})
+
+    -- Notest and .net framework adapters
+    use({
+        "nvim-neotest/neotest",
+        requires = {
+            {
+                "Issafalcon/neotest-dotnet",
+            },
+        }
+    })
 
     -- Vim game
     use({'ThePrimeagen/vim-be-good'})

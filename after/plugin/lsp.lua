@@ -20,8 +20,9 @@ lsp_zero.extend_lspconfig({
 })
 
 
-require('mason').setup({
-     ensure_installed = { "csharpier", "netcoredbg" },
+require('mason').setup()
+require('mason-tool-installer').setup({
+     ensure_installed = { "netcoredbg" },
 })
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 

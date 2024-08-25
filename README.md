@@ -83,6 +83,8 @@ https://github.com/GustavEikaas/easy-dotnet.nvim
 Here's another plugin, says it has support for nunit and xunit.
 https://github.com/Issafalcon/neotest-dotnet
 
+It's all setup now. Tests are running babyyyy.
+
 ## Split Screen
 Split screen is supported by default with :vsplit.
 But the inactive screen looses transparency...
@@ -90,11 +92,15 @@ But the inactive screen looses transparency...
 ## Using tmux
 tmux allows running multiple apps in the same terminal.
 It provides multiplexing. Default installation is fine just make sure to add these to fix the colors:
+
+Also using tmux somehow adds a delay to escaping to Normal mode. Settings bellow address that.
 ```
 ~$ cat .tmux.conf 
 set -ga terminal-overrides ",*256col*:Tc"
 set -g default-terminal "screen-256color"
+set -sg escape-time 10
 ```
+
 ## Outstanding issues and tickets
 
 * F10 button doesn't work. Or it does something that is not F10. Feels like an escape char.
@@ -106,8 +112,5 @@ set -g default-terminal "screen-256color"
 * What's the diff between /after and /lua directories.
     * Semi-solved: In very broad terms /after configs will be applied later.
 * Solve path resolution for the debugger.
-
-
-
 
 

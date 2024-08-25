@@ -2,8 +2,11 @@ local dap = require('dap')
 
 dap.adapters.coreclr = {
   type = 'executable',
-  command = '/home/mellow/.config/nvim/netcoredbg/netcoredbg',
-  args = {'--interpreter=vscode'}
+  command = vim.fn.exepath("netcoredbg"),
+  args = {'--interpreter=vscode'},
+  options = {
+      detached = false,
+  },
 }
 
 dap.configurations.cs = {

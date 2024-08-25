@@ -20,11 +20,13 @@ lsp_zero.extend_lspconfig({
 })
 
 
-require('mason').setup({})
+require('mason').setup({
+     ensure_installed = { "csharpier", "netcoredbg" },
+})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
-  ensure_installed = {'csharp_ls'},
+  ensure_installed = {'csharp_ls', 'lua_ls'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})

@@ -15,6 +15,8 @@ https://github.com/nvim-telescope/telescope.nvim
 
 We will also use treesitter based highlighting as that is supposedly better.
 https://github.com/nvim-treesitter/nvim-treesitter
+    * To get the full extent of its capabilities you should install your language's config for treesitter.
+    * For .net it is called "c_sharp"
 
 We'll install the tree sitter playground. Probably not necessary but might be useful.
 https://github.com/nvim-treesitter/playground
@@ -45,10 +47,23 @@ cmd = { "dotnet", "/home/mellow/.config/nvim/omnisharp/OmniSharp.dll" },
 ### Or csharp-ls
 https://github.com/razzmatazz/csharp-language-server
 This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it out now.
+It is based on roslyn.
 
-3. Additional extensions for the omnisharp functionality are here. I've noticed that I couldn't check all references. Maybe this fixes it somehow.
+3. Additional extensions for the omnisharp functionality are here. I've noticed that I couldn't check all references. Maybe this fixes it somehow. At the moment I did not find a way to set it all up but here is a good doc from lazy vim about developing for .net. It actually suggests using the extended omnisharp ls https://www.lazyvim.org/extras/lang/omnisharp
 
-https://github.com/Hoffs/omnisharp-extended-lsp.nvim
+### Or roslyn.nvim
+Which apparetnly the latest and greatest lsp for .net currently used in vscode.
+https://github.com/jmederosalvarado/roslyn.nvim
+Maybe I should test this out at some point, but charp-ls is quite good atm.
+
+https://github.com/jmederosalvarado/roslyn.nvim
+
+## Formatters and linting
+charpier is available from mason but I'm not sure how to set it up.
+I might need another plugin to drive the formatting. Perhaps this... But linting is not a priority now.
+https://github.com/mfussenegger/nvim-lint
+https://github.com/stevearc/conform.nvim
+https://github.com/stevearc/conform.nvim/issues/379
 
 ## Debugging
 There is some debugging support for .net as well but how does it all pipe together is to be tested.
@@ -65,6 +80,9 @@ If there's a way to resemble some of that experience it would be super nice.
 Here's someone who tried solving this:
 https://github.com/GustavEikaas/easy-dotnet.nvim
 
+Here's another plugin, says it has support for nunit and xunit.
+https://github.com/Issafalcon/neotest-dotnet
+
 ## Split Screen
 Split screen is supported by default with :vsplit.
 But the inactive screen looses transparency...
@@ -80,11 +98,11 @@ set -g default-terminal "screen-256color"
 ## Outstanding issues and tickets
 
 * F10 button doesn't work. Or it does something that is not F10. Feels like an escape char.
-** Solved gnome terminal was interceptint this button. Solved by disabling mnemonics in the terminal preferences. 
+    * Solved gnome terminal was interceptint this button. Solved by disabling mnemonics in the terminal preferences. 
 * Somehow I can't do completion properly.
-** Solved with some remaps.
+    * Solved with some remaps.
 * Install lua lsp to help with configuration of neovim.
-** Solved
+    * Solved
 * What's the diff between /after and /lua directories.
 
 

@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         requires = { {"nvim-lua/plenary.nvim"} }
-    } 
+    }
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
     use {
@@ -45,4 +45,8 @@ return require('packer').startup(function(use)
     use({'mfussenegger/nvim-dap'})
     use({'rcarriga/nvim-dap-ui'})
     use({'nvim-neotest/nvim-nio'})
+
+    -- Vim game
+    use({'ThePrimeagen/vim-be-good'})
+
 end)

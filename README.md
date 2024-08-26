@@ -35,7 +35,7 @@ Just untar it near neovim.
 
 ### Install your choice of LSP. This is omnisharp.
 Install and configure the LSP for Vim. The getting started guide is pretty good and will get you going.
-https://github.com/VonHeikemen/lsp-zero.nvim?tab=readme-ov-file
+We're not using lsp-zero as that is an overhead our setup does not require.
 
 When the time comes to configure the Lsp, you will need to provide the following as the server:
 
@@ -53,6 +53,7 @@ It is based on roslyn.
 
 ### Or roslyn.nvim
 Which apparetnly the latest and greatest lsp for .net currently used in vscode.
+But it is also based on Roslyn so idk if this is in any way
 https://github.com/jmederosalvarado/roslyn.nvim
 Maybe I should test this out at some point, but charp-ls is quite good atm.
 
@@ -112,5 +113,6 @@ set -sg escape-time 10
 * What's the diff between /after and /lua directories.
     * Semi-solved: In very broad terms /after configs will be applied later.
 * Solve path resolution for the debugger.
-
+* Add rest of the keymaps. 
++ Solve the undefined global for vim.
 

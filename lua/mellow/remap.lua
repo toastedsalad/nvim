@@ -1,4 +1,5 @@
-vim.g.mapleader = " "	
+vim.g.mapleader = " "
+
 vim.keymap.set("n", "<leader>jm", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ss", vim.cmd.vsplit)
 
@@ -14,3 +15,23 @@ vim.keymap.set('n', '<Leader>B', function() dap.set_breakpoint(vim.fn.input('Bre
 vim.keymap.set('n', '<Leader>lp', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end, { silent = true })
 vim.keymap.set('n', '<Leader>dr', dap.repl.open, { silent = true })
 vim.keymap.set('n', '<Leader>dl', dap.run_last, { silent = true })
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
     }
 
     -- Lsp related plugins
-    use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
     use({'neovim/nvim-lspconfig'})
     use({'hrsh7th/nvim-cmp'})
     use({'hrsh7th/cmp-nvim-lsp'})

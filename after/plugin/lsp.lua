@@ -1,22 +1,27 @@
 
-local lsp_zero = require('lsp-zero')
+vim.opt.signcolumn = 'yes'
 
-local lsp_attach = function(client, bufnr)
-  local opts = {buffer = bufnr}
+local lspconfig = require('lspconfig')
 
-  vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-  vim.keymap.set('n', '<F5>', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-  vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-  vim.keymap.set('n', '<F3>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-  vim.keymap.set({'n', 'x'}, '<F2>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-  vim.keymap.set('v', '<F1>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-end
+-- Add cmp_nvim_lsp capabilities settings to lspconfig
+lspconfig.util.default_config.capabilities = vim.tbl_deep_extend(
+  'force',
+  lspconfig.util.default_config.capabilities,
+  require('cmp_nvim_lsp').default_capabilities()
+)
 
-lsp_zero.extend_lspconfig({
-  sign_text = true,
-  lsp_attach = lsp_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+vim.api.nvim_create_autocmd('LspAttach', {
+    desc = 'LSP actions',
+    callback = function(event)
+        local opts = {buffer = event.buf}
+        vim.keymap.set('n', 'H', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+        vim.keymap.set('n', 'sr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+        vim.keymap.set('n', 'sh', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+        vim.keymap.set('n', 'rs', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+        vim.keymap.set({'n', 'x'}, '<F2>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+        vim.keymap.set('v', 'ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    end,
 })
 
 

@@ -3,7 +3,7 @@ local dap = require('dap')
 if not dap.adapters["netcoredbg"] then
     require("dap").adapters["netcoredbg"] = {
         type = "executable",
-        command = '/home/mellow/.local/share/nvim/mason/bin/netcoredbg',
+        command = '/home/gedaas/.local/share/nvim/mason/bin/netcoredbg',
         args = { "--interpreter=vscode" },
         options = {
             detached = false,

@@ -38,13 +38,26 @@ require('mason-tool-installer').setup({
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
-  ensure_installed = {'csharp_ls', 'lua_ls'},
+  -- 'csharp_ls' is one other server.
+  ensure_installed = {'csharp_ls', 'lua_ls', 'pylsp'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
     end,
   },
 })
+
+local util = require('lspconfig.util');
+
+require'lspconfig'.csharp_ls.setup{
+    root_dir = util.root_pattern('.git'),
+    debounce_text_changes = 150,
+    update_in_insert = true,
+}
+
+-- require'lspconfig'.omnisharp.setup{
+--     cmd = { "dotnet", "/home/gedaas/.config/nvim/omnisharp/OmniSharp.dll" }
+-- }
 
 ---
 -- Autocompletion setup

@@ -36,9 +36,6 @@ require('mason-tool-installer').setup({
      ensure_installed = { "netcoredbg" },
 })
 require('mason-lspconfig').setup({
-  -- Replace the language servers listed here 
-  -- with the ones you want to install
-  -- 'csharp_ls' is one other server.
   ensure_installed = {'csharp_ls', 'lua_ls', 'pylsp'},
   handlers = {
     function(server_name)
@@ -51,8 +48,6 @@ local util = require('lspconfig.util');
 
 require'lspconfig'.csharp_ls.setup{
     root_dir = util.root_pattern('.git'),
-    debounce_text_changes = 150,
-    update_in_insert = true,
 }
 
 -- require'lspconfig'.omnisharp.setup{

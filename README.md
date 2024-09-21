@@ -7,6 +7,8 @@ I just blatantly copied everytying over. Sort of...
 
 Aside from all the configs in this directory, here are some highlights.
 
+You must start by installing this manually and then just doing PackerSync.
+That should be enough to get going.
 This is using packer as the package manager
 https://github.com/wbthomason/packer.nvim
 

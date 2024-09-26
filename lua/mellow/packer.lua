@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
 
     -- General nvim plugins for navigation and editting
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('nvim-treesitter/playground')
     use("nvim-lua/plenary.nvim")
     use {
         "ThePrimeagen/harpoon",

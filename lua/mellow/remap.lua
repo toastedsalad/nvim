@@ -36,7 +36,7 @@ vim.keymap.set('v', 'd', "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
 -- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<Leader>s", [[:%s/<C-r><C-w>//g<Left><Left>]])
+vim.keymap.set("n", "<Leader>fr", [[:%s/<C-r><C-w>//g<Left><Left>]])
 -- Not sure what this is doing, I probably need to lear about the sessionizer.
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 

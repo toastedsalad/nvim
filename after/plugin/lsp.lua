@@ -36,7 +36,7 @@ require('mason-tool-installer').setup({
      ensure_installed = { "netcoredbg" },
 })
 require('mason-lspconfig').setup({
-  ensure_installed = {'csharp_ls', 'lua_ls', 'pylsp'},
+  ensure_installed = {'csharp_ls', 'lua_ls', 'jedi_language_server'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})

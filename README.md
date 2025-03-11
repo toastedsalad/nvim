@@ -3,6 +3,8 @@
 All of this is largerly based on theprimagen's config.
 I just blatantly copied everytying over. Sort of...
 
+TODO: migrate to lazyvim... As Packer is getting deprecated.
+
 ## Some Key Notes
 
 Aside from all the configs in this directory, here are some highlights.

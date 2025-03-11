@@ -1,7 +1,7 @@
 # My NeoVim Config
 
-All of this is largerly based on theprimagen's config.
-I just blatantly copied everytying over. Sort of...
+All of this is largely based on theprimagen's config.
+I just blatantly copied everything over. Sort of...
 
 TODO: migrate to lazyvim... As Packer is getting deprecated.
 
@@ -30,7 +30,7 @@ https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
 Another cool plugin is the undo tree. It presents a history for undoing things.
 
-## Additional tools and utilites
+## Additional tools and utilities
 Make sure to have your frameworks like the .net already installed.
 Telescope depends on ripgrep.
 
@@ -46,12 +46,12 @@ I also use mason to get the language servers.
 Setting up mason is also described in the LSP zero docs.
 
 ### .net: csharp-ls
-So far the best working solution. It is installed is also installed via mason.
+So far the best working solution. It is installed via mason.
 
 https://github.com/razzmatazz/csharp-language-server
-This thing is written by an absolute chad Lithuanian dude. Respekt. Teting it out now.
+This thing is written by an absolute chad Lithuanian dude. Respekt.
 It is based on roslyn.
-LSP requres multiple steps.
+LSP requires multiple steps.
 
 ### .net: omnisharp
 https://github.com/OmniSharp/omnisharp-roslyn/releases

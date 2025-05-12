@@ -30,19 +30,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
+-- Setup mason
+require("mason").setup()
 
-require('mason').setup()
 require('mason-tool-installer').setup({
-     ensure_installed = { "netcoredbg" },
+    ensure_installed = { "netcoredbg" },
 })
-require('mason-lspconfig').setup({
-  ensure_installed = {'csharp_ls', 'lua_ls', 'jedi_language_server', 'harper_ls', 'gopls'},
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  },
-})
+
+-- Setup mason-lspconfig with handlers
+require("mason-lspconfig").setup {
+    ensure_installed = {
+      "csharp_ls",
+      "lua_ls",
+      "jedi_language_server",
+      "harper_ls",
+      "gopls",
+    }
+}
+
+
+-- require('mason').setup()
+-- require('mason-lspconfig').setup({
+--   ensure_installed = {'csharp_ls', 'lua_ls', 'jedi_language_server', 'harper_ls', 'gopls'},
+--   handlers = {
+--     function(server_name)
+--       require('lspconfig')[server_name].setup({})
+--     end,
+--   },
+-- })
 
 local util = require('lspconfig.util');
 

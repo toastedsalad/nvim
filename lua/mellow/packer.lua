@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
     use({'williamboman/mason.nvim'})
     use({'WhoIsSethDaniel/mason-tool-installer.nvim'})
 
+    -- CSHARP extensions
+    use({'Hoffs/omnisharp-extended-lsp.nvim'})
+
     -- Debugging
     use({'mfussenegger/nvim-dap'})
     use({'rcarriga/nvim-dap-ui'})

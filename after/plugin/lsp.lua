@@ -40,7 +40,8 @@ require('mason-tool-installer').setup({
 -- Setup mason-lspconfig with handlers
 require("mason-lspconfig").setup {
     ensure_installed = {
-      "csharp_ls",
+      -- "csharp_ls",
+      "omnisharp",
       "lua_ls",
       "jedi_language_server",
       "harper_ls",
@@ -48,26 +49,33 @@ require("mason-lspconfig").setup {
     }
 }
 
-
--- require('mason').setup()
--- require('mason-lspconfig').setup({
---   ensure_installed = {'csharp_ls', 'lua_ls', 'jedi_language_server', 'harper_ls', 'gopls'},
---   handlers = {
---     function(server_name)
---       require('lspconfig')[server_name].setup({})
---     end,
---   },
--- })
-
-local util = require('lspconfig.util');
-
-require'lspconfig'.csharp_ls.setup{
-    root_dir = util.root_pattern('.git'),
+require'lspconfig'.omnisharp.setup {
+  cmd = {
+    vim.fn.executable('OmniSharp') == 1 and 'OmniSharp' or 'omnisharp',
+    '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
+    '--hostPID',
+    tostring(vim.fn.getpid()),
+    'DotNet:enablePackageRestore=false',
+    '--encoding',
+    'utf-8',
+    '--languageserver',
+  },
+  root_markers = { '.git' },
+  handlers = {
+    ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+    ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+    ["textDocument/references"] = require('omnisharp_extended').references_handler,
+    ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+  },
+  settings = {
+    RoslynExtensionsOptions = {
+      EnableDecompilationSupport = true
+    }
+  }
 }
 
--- require'lspconfig'.omnisharp.setup{
---     cmd = { "dotnet", "/home/gedaas/.config/nvim/omnisharp/OmniSharp.dll" }
--- }
+
+local util = require('lspconfig.util');
 
 ---
 -- Autocompletion setup

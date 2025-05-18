@@ -51,7 +51,8 @@ require("mason-lspconfig").setup {
 
 require'lspconfig'.omnisharp.setup {
   cmd = {
-    '/home/gedaas/.local/share/nvim/mason/packages/omnisharp/OmniSharp',
+    -- '/home/gedaas/.local/share/nvim/mason/packages/omnisharp/omnisharp',
+    'omnisharp',
     '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
     '--hostPID',
     tostring(vim.fn.getpid()),
@@ -60,7 +61,7 @@ require'lspconfig'.omnisharp.setup {
     'utf-8',
     '--languageserver',
   },
-  root_markers = { '.git' },
+  root_markers = { ".git" },
   handlers = {
     ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
     ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
@@ -71,7 +72,7 @@ require'lspconfig'.omnisharp.setup {
     RoslynExtensionsOptions = {
       EnableDecompilationSupport = true
     }
-  }
+  },
 }
 
 

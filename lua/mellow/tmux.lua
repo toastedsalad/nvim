@@ -4,7 +4,8 @@ local M = {}
 function M.split_here(horizontal)
     local dir
     if vim.bo.filetype == "netrw" then
-        dir = vim.fn.getcwd()
+        -- Use netrw's current directory if available
+        dir = vim.b.netrw_curdir or vim.fn.getcwd()
     else
         dir = vim.fn.expand("%:p:h")
     end

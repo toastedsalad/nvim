@@ -40,8 +40,8 @@ require('mason-tool-installer').setup({
 -- Setup mason-lspconfig with handlers
 require("mason-lspconfig").setup {
     ensure_installed = {
-      -- "csharp_ls",
-      "omnisharp",
+      "csharp_ls",
+      -- "omnisharp",
       "lua_ls",
       "jedi_language_server",
       "harper_ls",
@@ -49,31 +49,31 @@ require("mason-lspconfig").setup {
     }
 }
 
-require'lspconfig'.omnisharp.setup {
-  cmd = {
-    -- '/home/gedaas/.local/share/nvim/mason/packages/omnisharp/omnisharp',
-    'omnisharp',
-    '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
-    '--hostPID',
-    tostring(vim.fn.getpid()),
-    'DotNet:enablePackageRestore=false',
-    '--encoding',
-    'utf-8',
-    '--languageserver',
-  },
-  root_markers = { ".git" },
-  handlers = {
-    ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
-    ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
-    ["textDocument/references"] = require('omnisharp_extended').references_handler,
-    ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
-  },
-  settings = {
-    RoslynExtensionsOptions = {
-      EnableDecompilationSupport = true
-    }
-  },
-}
+-- require'lspconfig'.omnisharp.setup {
+--   cmd = {
+--     -- '/home/gedaas/.local/share/nvim/mason/packages/omnisharp/omnisharp',
+--     'omnisharp',
+--     '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
+--     '--hostPID',
+--     tostring(vim.fn.getpid()),
+--     'DotNet:enablePackageRestore=false',
+--     '--encoding',
+--     'utf-8',
+--     '--languageserver',
+--   },
+--   root_markers = { ".git" },
+--   handlers = {
+--     ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+--     ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+--     ["textDocument/references"] = require('omnisharp_extended').references_handler,
+--     ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+--   },
+--   settings = {
+--     RoslynExtensionsOptions = {
+--       EnableDecompilationSupport = true
+--     }
+--   },
+-- }
 
 
 local util = require('lspconfig.util');

@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
         "nvim-neotest/neotest",
         requires = {
             {
-                "Issafalcon/neotest-dotnet",
+                "nsidorenco/neotest-vstest"
             },
         }
     })

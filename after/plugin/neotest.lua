@@ -1,6 +1,6 @@
 require("neotest").setup({
     adapters = {
-        require("neotest-dotnet")
+        require("neotest-vstest")
     }
 })
 

@@ -12,10 +12,15 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
+            require('rose-pine').setup({
+                highlight_groups = {
+                    String = { fg = "#e0b97f" }, -- change string color (pick your favorite)
+                }
+            })
+
             vim.cmd('colorscheme rose-pine')
         end
     })
-
     -- General nvim plugins for navigation and editting
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use("nvim-lua/plenary.nvim")
@@ -66,7 +71,8 @@ return require('packer').startup(function(use)
         requires = {
             {
                 "nsidorenco/neotest-vstest",
-                "antoinemadec/FixCursorHold.nvim"
+                "antoinemadec/FixCursorHold.nvim",
+                "nvim-neotest/neotest-python"
             },
         }
     })

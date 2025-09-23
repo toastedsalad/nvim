@@ -1,6 +1,11 @@
 require("neotest").setup({
     adapters = {
-        require("neotest-vstest")
+        require("neotest-vstest"),
+        require("neotest-python")({
+            dap = { justMyCode = false }, -- optional: enables debugging with DAP
+            runner = "pytest",            -- or "unittest" if you prefer
+        })
+
     }
 })
 

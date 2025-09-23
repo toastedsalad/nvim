@@ -16,14 +16,6 @@ return require('packer').startup(function(use)
         end
     })
 
-    use({
-        'rebelot/kanagawa.nvim',
-        as = 'kanagawa',
-        config = function()
-            vim.cmd('colorscheme kanagawa-dragon')
-        end
-    })
-
     -- General nvim plugins for navigation and editting
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use("nvim-lua/plenary.nvim")
@@ -73,7 +65,8 @@ return require('packer').startup(function(use)
         "nvim-neotest/neotest",
         requires = {
             {
-                "nsidorenco/neotest-vstest"
+                "nsidorenco/neotest-vstest",
+                "antoinemadec/FixCursorHold.nvim"
             },
         }
     })

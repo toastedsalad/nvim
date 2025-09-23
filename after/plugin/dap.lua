@@ -10,6 +10,7 @@ if not dap.adapters["netcoredbg"] then
         },
     }
 end
+
 for _, lang in ipairs({ "cs", "fsharp", "vb" }) do
     if not dap.configurations[lang] then
         dap.configurations[lang] = {

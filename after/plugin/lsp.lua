@@ -43,9 +43,9 @@ require("mason-lspconfig").setup {
       "csharp_ls",
       -- "omnisharp",
       "lua_ls",
-      "jedi_language_server",
       "harper_ls",
       "gopls",
+      "pyright"
     }
 }
 

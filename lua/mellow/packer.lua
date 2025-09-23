@@ -16,6 +16,14 @@ return require('packer').startup(function(use)
         end
     })
 
+    use({
+        'rebelot/kanagawa.nvim',
+        as = 'kanagawa',
+        config = function()
+            vim.cmd('colorscheme kanagawa-dragon')
+        end
+    })
+
     -- General nvim plugins for navigation and editting
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use("nvim-lua/plenary.nvim")

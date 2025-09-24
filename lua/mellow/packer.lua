@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
+
     -- General nvim plugins for navigation and editting
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use("nvim-lua/plenary.nvim")
@@ -79,5 +80,8 @@ return require('packer').startup(function(use)
 
     -- Vim game
     use({'ThePrimeagen/vim-be-good'})
+
+    -- Vim CoPilot
+    use({'github/copilot.vim'})
 
 end)

@@ -40,23 +40,23 @@ end
 
 -- Python debugger, pip install debugpy
 -- It's bugged .venv paths are ignored
-dap.configurations.python = {
-    {
-        type = 'python',
-        request = 'launch',
-        name = 'Launch file',
-        program = "${file}", -- current file
-        pythonPath = function()
-            -- Use virtualenv if available, otherwise system Python
-            local venv_path = os.getenv('VIRTUAL_ENV')
-            if venv_path then
-                return venv_path .. '/bin/python'
-            else
-                return vim.fn.exepath('python')
-            end
-        end,
-    },
-}
+-- dap.configurations.python = {
+--     {
+--         -- type = 'python',
+--         -- request = 'launch',
+--         -- name = 'Launch file',
+--         -- program = "${file}", -- current file
+--         pythonPath = function()
+--             -- Use virtualenv if available, otherwise system Python
+--             local venv_path = os.getenv('VIRTUAL_ENV')
+--             if venv_path then
+--                 return venv_path .. '/bin/python'
+--             else
+--                 return vim.fn.exepath('python')
+--             end
+--         end,
+--     },
+-- }
 
 
 

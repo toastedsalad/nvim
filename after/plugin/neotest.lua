@@ -1,6 +1,14 @@
+local utils = require("neotest.utils") -- if available
+
 require("neotest").setup({
     adapters = {
         require("neotest-vstest"),
+        require("neotest-jest"),
+        -- require("neotest-jest")({
+        --     -- jestCommand = "npm test --",
+        --     cwd = "/home/gedaas/source/seval-combo/SEVAL/webui/pkgs/sydneyeval-client",
+        --     jestTestDiscovery = false,
+        -- }),
         require("neotest-python")({
             dap = { justMyCode = false }, -- optional: enables debugging with DAP
             runner = "pytest",            -- or "unittest" if you prefer

@@ -47,7 +47,6 @@ return require('packer').startup(function(use)
         end
     })
 
-
     -- Lsp related plugins
     use({'neovim/nvim-lspconfig'})
     use({'hrsh7th/nvim-cmp'})
@@ -73,7 +72,8 @@ return require('packer').startup(function(use)
             {
                 "nsidorenco/neotest-vstest",
                 "antoinemadec/FixCursorHold.nvim",
-                "nvim-neotest/neotest-python"
+                "nvim-neotest/neotest-python",
+                "nvim-neotest/neotest-jest"
             },
         }
     })

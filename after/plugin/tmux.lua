@@ -11,13 +11,13 @@ function M.split_here(horizontal)
     end
 
     local split_flag = horizontal and "-h" or "-v"
-    local size_percent = horizontal and "50" or "13" -- width for horizontal, height for vertical
+    local size_col = horizontal and "50" or "12" -- width for horizontal, height for vertical
 
     vim.fn.system({
         "tmux", "split-window",
         split_flag,
         "-c", dir,
-        "-p", size_percent
+        "-l", size_col
     })
 end
 

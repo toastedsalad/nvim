@@ -40,12 +40,10 @@ require('mason-tool-installer').setup({
 -- Setup mason-lspconfig with handlers
 require("mason-lspconfig").setup {
     ensure_installed = {
-      -- "csharp_ls",
       "ts_ls",
       "omnisharp",
       "lua_ls",
       "harper_ls",
-      "gopls",
       "pyright"
     }
 }

@@ -6,7 +6,7 @@ require("neotest").setup({
         require("neotest-jest")({
             -- jestCommand = "npm test --",
             -- cwd = "/home/gedaas/source/seval-combo/SEVAL/webui/pkgs/sydneyeval-client",
-            cwd = "/home/gedaas/source/klokit/frontend",
+            cwd = "/home/mellow/source/klokit/frontend",
             jestTestDiscovery = false,
         }),
         require("neotest-python")({

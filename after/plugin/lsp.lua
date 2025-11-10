@@ -51,7 +51,7 @@ require("mason-lspconfig").setup {
 require'lspconfig'.omnisharp.setup {
   cmd = {
     -- '/home/gedaas/.local/share/nvim/mason/packages/omnisharp/omnisharp',
-    'omnisharp',
+    'OmniSharp',
     '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
     '--hostPID',
     tostring(vim.fn.getpid()),
